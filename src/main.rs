@@ -1,14 +1,11 @@
 use std::env;
 fn main() {
-    let args: Vec<String> = env::args().collect();
-    if args.len() > 1 {
-        for item in args[1..].iter() {
-            println!("{}", mock(item))
-        }
+    for item in env::args().skip(1) {
+        println!("{}", mock(item))
     }
 }
 
-fn mock(input: &str) -> String {
+fn mock(input: String) -> String {
     let mut make_uppercase = false;
     input
         .chars()
