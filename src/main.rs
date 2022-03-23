@@ -2,8 +2,8 @@ use std::env;
 fn main() {
     let args: Vec<String> = env::args().collect();
     if args.len() > 1 {
-        for item in args[1..].into_iter() {
-            println!("{}", mock(&item))
+        for item in args[1..].iter() {
+            println!("{}", mock(item))
         }
     }
 }
